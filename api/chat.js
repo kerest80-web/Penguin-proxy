@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    // Formato que o Penguin Proxy espera
+    // Formato que ElectraGPT espera
     res.status(200).json({
       choices: [
         {
