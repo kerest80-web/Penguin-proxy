@@ -31,11 +31,13 @@ export default async function handler(req, res) {
 
     // Formato que o Penguin Proxy espera
     res.status(200).json({
-      choices: data.choices.map(choice => ({
-        message: {
-          content: choice.message.content
+      choices: [
+        {
+          message: {
+            content: data.choices[0].message.content
+          }
         }
-      }))
+      ]
     });
   } catch (error) {
     res.status(500).json({ error: "Erro no proxy", details: error.message });
